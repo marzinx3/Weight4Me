@@ -1,0 +1,13 @@
+.root{
+  -fx-background-image: url("nature_ground.JPG");
+    -fx-background-color: #7CAFC2;
+    -fx-font-size:11pt;
+}
+.label{
+-fx-text-fill: #E8E8E8;
+}
+.button{
+    -fx-background-color: linear-gradient(#7CAFC2,#D8D8D8);
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 4px;
+}
