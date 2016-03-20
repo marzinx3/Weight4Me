@@ -1,5 +1,7 @@
 .root{
   -fx-background-image: url("nature_ground.JPG");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover,auto;
     -fx-background-color: #7CAFC2;
     -fx-font-size:11pt;
 }
