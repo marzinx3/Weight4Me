@@ -1,4 +1,4 @@
-package JavaFx;
+package JavaFx.DB_Connection;
 
 /**
  * Created by coolm_000 on 3/19/2016.

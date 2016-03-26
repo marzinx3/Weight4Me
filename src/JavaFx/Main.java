@@ -1,5 +1,7 @@
 package JavaFx;
 
+import JavaFx.AlertBoxes.AlertBox;
+import JavaFx.Logins.LoginCheck;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,6 +13,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
+
 
 
 public class Main extends Application  {
@@ -41,7 +44,7 @@ public class Main extends Application  {
 
             // Name input
             nameInput = new TextField();
-            nameInput.setPromptText("Username or Email");
+            nameInput.setPromptText("Username");
             GridPane.setConstraints(nameInput, 1, 2);
 
             //Pass Label
@@ -60,20 +63,41 @@ public class Main extends Application  {
             loginButton.setOnAction(e -> {
                 if (nameInput.getText().isEmpty() == false && passInput.getText().isEmpty() == false) {
                     loginCheck.verify(nameInput, passInput);
+                    window.close();
                 } else {
                     AlertBox.display("Empty Values", "Please Input Username & Password");
                 }
             }  );
             GridPane.setConstraints(loginButton, 1, 5);
 
+
+
+            //Register and Forgot Password
+            String register="Register";
+            String resetPass="Forgot Password";
+            Hyperlink regisLink= new Hyperlink(register);
+            regisLink.setOnAction(e-> {
+                    // PopUp Register page
+                    }
+            );
+
+            Hyperlink resetLink = new Hyperlink(resetPass);
+            regisLink.setOnAction(e->{
+                // PopUp ForgotPass Page
+
+            });
+
+            GridPane.setConstraints(regisLink, 1,6);
+            GridPane.setConstraints(resetLink, 1,7);
+
             // Setting the Scene
-            grid.getChildren().addAll(nameInput, nameLabel, passLabel, passInput, loginButton);
+            grid.getChildren().addAll(nameInput, nameLabel, passLabel, passInput, loginButton,regisLink,resetLink);
             Scene scene = new Scene(grid, 700, 550);
             scene.getStylesheets().add("CSS/LoginPage.css");
             window.initStyle(StageStyle.DECORATED);
             window.setScene(scene);
             window.show();
-            }
+            }//start closure
 
 
 

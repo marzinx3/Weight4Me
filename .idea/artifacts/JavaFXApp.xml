@@ -10,6 +10,7 @@
       <element id="archive" name="JavaFXApp.jar">
         <element id="module-output" name="Weight4Me" />
       </element>
+      <element id="artifact" artifact-name="twitter4j-core-4_0_4" />
     </root>
   </artifact>
 </component>

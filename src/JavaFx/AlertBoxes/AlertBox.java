@@ -1,4 +1,4 @@
-package JavaFx;
+package JavaFx.AlertBoxes;
 
 
 import javafx.geometry.Pos;

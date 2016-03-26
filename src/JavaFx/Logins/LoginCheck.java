@@ -1,5 +1,8 @@
-package JavaFx;
+package JavaFx.Logins;
 
+import JavaFx.AlertBoxes.AlertBox;
+import JavaFx.DB_Connection.SQLUtil;
+import JavaFx.Windows.HomeScreen;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import java.sql.*;
@@ -21,13 +24,14 @@ public class LoginCheck {
     }
 
     public void verify(TextField nameInput, PasswordField passInput) {
-        // check fake database for
+        // check database for username and password
         String username = nameInput.getText();
         String password = passInput.getText();
         AlertBox alert = new AlertBox();
         try {
             if (credentialsCheck(username, password)) {
-                alert.display("Successful", "You are logged in");
+                HomeScreen startHomeScreen=new HomeScreen();
+                startHomeScreen.screen();
             } else {
                 alert.display("Wrong Information", "Incorrect Username or Password!");
             }
@@ -41,7 +45,7 @@ public class LoginCheck {
         SQLUtil util=null;
         try{
             util=new SQLUtil();
-            String sql = "SELECT UserName,Password FROM endusers";
+            String sql = "SELECT UserName,Password FROM enduser";
             util.setSQL(sql);
             ResultSet rset=util.executeQuery();
             if(rset.next()) {
